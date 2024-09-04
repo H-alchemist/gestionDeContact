@@ -42,10 +42,17 @@ void insert(){
             printf("Entrer le nom: ");
             scanf("%s", c.nom);
 
-            printf("Entrer le numero tele  ");
+            if (chercher(c.nom)!=-1)
+            {
+                printf("le contact deja exist \n");
+                return 1;
+            }
+            
+
+            printf("Entrer le numero tele \n ");
             scanf("%d", &c.num);
 
-            printf("Entrer l'email: ");
+            printf("Entrer l'email: \n");
             scanf("%s", c.email);
 
              emp[count]=c;
@@ -56,6 +63,16 @@ void insert(){
 
 
 }
+
+void dejaExist(char x[40]){
+
+
+
+
+
+
+}
+
 void modifier(){
     char x[40];
 
@@ -63,7 +80,7 @@ void modifier(){
    scanf("%s" , x);
      int y=chercher(x);
      if(y==-1){
-        printf(" le contact n'exist pas");
+        printf(" le contact n'exist pas\n");
      }else{
 
         char e[30];
@@ -94,7 +111,7 @@ void supprimer(){
 
     if (res==-1)
     {
-        printf("ce contact n'exist pas");
+        printf("ce contact n'exist pas \n");
     }else{
         for (int i = res; i < count-1; i++)
         {
